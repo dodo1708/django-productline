@@ -33,6 +33,9 @@ Example::
 """
 
 
+from typing import Any, List
+
+
 def get_urls():
     """
     refine this to add urlpatterns
@@ -40,7 +43,7 @@ def get_urls():
     return []
 
 
-def get_fallback_urls():
+def get_fallback_urls() -> List[Any]:
     """
     refine this to add special fallback urlpatterns.
     These urls will be appended to the end of the url patterns list (after 'get_urls()' in root_urlconf).

@@ -425,7 +425,7 @@ def write_composer_operation_log(filename):
     ol = copy.deepcopy(OPERATION_LOG)
     ol = serializer.serialize_operation_log(ol)
     with open(filename, 'w+') as operation_log_file:
-        operation_log_file.write(json.dumps(ol, indent=4, encoding="utf8"))
+        operation_log_file.write(json.dumps(ol, indent=4, ensure_ascii=False))
 
 
 @tasks.register

@@ -12,7 +12,7 @@ from django_productline import compare_version
 _product_selected = False
 
 
-def select_product():
+def select_product() -> None:
     """
     binds the frozen context the selected features
 

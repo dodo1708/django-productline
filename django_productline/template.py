@@ -6,7 +6,7 @@ after the composition process.
 import django
 from django_productline import compare_version
 
-def bind_settings():
+def bind_settings() -> None:
     """
     Put DJANGO_TEMPLATE_* under the right settings.* name according to django-version
     :return:

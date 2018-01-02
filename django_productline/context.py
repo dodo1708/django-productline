@@ -15,6 +15,7 @@ The context is loaded from a file in json format.
 import json
 import os
 
+from typing import Dict, Optional, Union
 PRODUCT_CONTEXT = None
 
 
@@ -33,13 +34,13 @@ class ContextAccessor(object):
     only reading is allowed! Don`t write to the context, please!
     """
 
-    def __init__(self, data):
+    def __init__(self, data: Dict[str, Union[str, None, int]]) -> None:
         """
         :param: data dict to wrap
         """
         self._data = data
 
-    def __getattr__(self, name):
+    def __getattr__(self, name: str) -> Union[int, str]:
         """
         makes uppercase keys of wrapped dict available using
         dot notation
@@ -52,11 +53,11 @@ class ContextAccessor(object):
 
         raise AttributeError
 
-    def get_as_dict(self):
+    def get_as_dict(self) -> Dict[str, Union[str, None, int]]:
         return self._data
 
 
-def bind_context(context_filename):
+def bind_context(context_filename: str) -> None:
     """
     loads context from file and binds to it
 

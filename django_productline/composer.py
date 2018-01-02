@@ -1,4 +1,4 @@
-from __future__ import unicode_literals, print_function
+from __future__ import unicode_literals, absolute_import
 
 import featuremonkey
 
@@ -60,5 +60,5 @@ class Composer(featuremonkey.Composer):
             )
 
 
-def get_composer():
+def get_composer() -> Composer:
     return Composer()
