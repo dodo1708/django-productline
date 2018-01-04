@@ -1,0 +1,22 @@
+introduce_TYPED_MODULES: list = [
+    'models',
+    'forms',
+    'views',
+    'utils',
+    'urls',
+    'feature',
+    'templatetags',
+    'settings',
+    'assets',
+    'blockconfig',
+    'api',
+    'block',
+    'blocks',
+    'auth',
+    'signals',
+    'decorators',
+    'styles',
+    'middleware',
+    'contextprocessors',
+    'admin'
+]

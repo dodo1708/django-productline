@@ -5,14 +5,15 @@ import django
 from django_productline import compare_version
 
 
-def refine_INSTALLED_APPS(original):
+from typing import List
+def refine_INSTALLED_APPS(original: List[str]) -> List[str]:
     return ['django_productline.features.djpladmin', 'django.contrib.admin', ] + list(original)
 
 
 introduce_ADMIN_URL = 'admin/'
 
 
-def refine_DJANGO_TEMPLATE_CONTEXT_PROCESSORS(original):
+def refine_DJANGO_TEMPLATE_CONTEXT_PROCESSORS(original: List[str]) -> List[str]:
     return list(original) + ['django_productline.features.djpladmin.context_processors.django_admin']
 
 

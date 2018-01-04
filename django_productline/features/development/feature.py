@@ -1,4 +1,5 @@
-def select(composer):
+from django_productline.composer import Composer
+def select(composer: Composer) -> None:
     # compose settings
     import django_productline.settings
     from . import settings

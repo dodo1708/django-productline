@@ -1,7 +1,8 @@
 from __future__ import unicode_literals
 
 
-def refine_get_urls(original):
+from typing import Callable
+def refine_get_urls(original: Callable) -> Callable:
     """
     serve static files (and media files also)
 

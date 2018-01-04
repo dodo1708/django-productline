@@ -7,3 +7,7 @@ def select(composer: Composer) -> None:
     import django_productline.startup
     from . import startup
     composer.compose(startup, django_productline.startup)
+
+    from . import settings
+    import django_productline.settings
+    composer.compose(settings, django_productline.settings)

@@ -2,7 +2,8 @@ from __future__ import unicode_literals
 
 
 # refinement for django_productline.settings
-def refine_INSTALLED_APPS(original):
+from typing import List
+def refine_INSTALLED_APPS(original: List[str]) -> List[str]:
     return ['django.contrib.staticfiles'] + list(original)
 
 

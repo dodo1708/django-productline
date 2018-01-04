@@ -1,3 +1,6 @@
+import monkeytype
+
+
 def refine_get_wsgi_application(original):
     def get_wsgi_application():
         from django_productline.startup import select_product
@@ -6,9 +9,16 @@ def refine_get_wsgi_application(original):
         app = get_wsgi_application()
 
         def wrapper(environ, start_response):
-            import monkeytype
             with monkeytype.trace():
                 return app(environ, start_response)
 
         return wrapper
     return get_wsgi_application
+
+
+# FIXME: This doesn't trace somehow...
+def refine_select_product(original):
+    def select_product():
+        with monkeytype.trace():
+            original()
+    return select_product
