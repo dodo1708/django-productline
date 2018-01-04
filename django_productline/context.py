@@ -1,4 +1,4 @@
-from __future__ import unicode_literals, print_function, division
+from __future__ import unicode_literals, division
 
 """
 the product context captures environment and configuration settings
@@ -15,7 +15,8 @@ The context is loaded from a file in json format.
 import json
 import os
 
-from typing import Dict, Optional, Union
+from typing import Dict, Union
+
 PRODUCT_CONTEXT = None
 
 
