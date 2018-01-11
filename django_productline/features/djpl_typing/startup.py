@@ -3,8 +3,8 @@ import monkeytype
 
 def refine_get_wsgi_application(original):
     def get_wsgi_application():
-        from django_productline.startup import select_product
-        select_product()
+        from django_productline import startup
+        startup.select_product()
         from django.core.wsgi import get_wsgi_application
         app = get_wsgi_application()
 
@@ -14,11 +14,3 @@ def refine_get_wsgi_application(original):
 
         return wrapper
     return get_wsgi_application
-
-
-# FIXME: This doesn't trace somehow...
-def refine_select_product(original):
-    def select_product():
-        with monkeytype.trace():
-            original()
-    return select_product

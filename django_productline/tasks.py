@@ -3,7 +3,6 @@ from __future__ import unicode_literals, print_function, division
 import copy
 import json
 import os
-import shutil
 import zipfile
 import datetime
 import featuremonkey
